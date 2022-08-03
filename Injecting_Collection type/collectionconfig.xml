@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="collection.Emp" name="vikash1">
+		<property name="name" value="vikash" />
+		<property name="mobiles">
+			<list>
+				<value>1234567890</value>
+				<value>1234678912</value>
+				<value>9988553265</value>
+				<value>5464984132</value>
+				<null />
+			</list>
+		</property>
+		<property name="address">
+			<set>
+				<value>Delhi</value>
+				<value>Kanpur</value>
+				<value>patiala</value>
+				<value>lucknow</value>
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="java" value="5 months" />
+				<entry key="python" value="3 months" />
+				<entry key="c" value="2 months" />
+				<entry key="c++" value="2.5 months" />
+			</map>
+		</property>
+		<property name="prop">
+			<props>
+				<prop key="name">Vikash</prop>
+				<prop key="companyName">Future_Tech</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
