@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		name="ds">
+		<property name="DriverClassName"
+			value="org.postgresql.Driver " />
+		<property name="url"
+			value="jdbc:postgresql://10.199.62.114:5432/Vikas@Spring" />
+		<property name="username" value="visa" />
+		<property name="password" value="visa" />
+	</bean>
+
+	<bean class="org.springframework.jdbc.core.JdbcTemplate"
+		name="jdbcTamplate" p:dataSource-ref="ds" />
+
+	<bean class="com.SpringJdbc.dao.StudentDaoImp" name="studentDao">
+		<property name="jdbcTemplate" ref="jdbcTamplate" />
+	</bean>
+</beans>
